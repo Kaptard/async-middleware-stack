@@ -41,6 +41,8 @@ middleware function.
 |:------------- |:------------- |:------------- |
 | middleware | Existing array of functions to base the stack on  | None |
 
+<br>
+
 ### stack.use(route, fn, method)
 > Returns a promise resolving the return value of the given function.
 
@@ -49,6 +51,8 @@ middleware function.
 | route | URL to limit the function to. If first arg is a function, it'll be considered as `fn`, **NOT** as `route`. | `'*'` |
 | fn | Function to execute with `req`, `res`, `opitonal` objects. | None |
 | fn | RESTful method to limit the function to. Default accepts any. | `'*'` |
+
+<br>
 
 ### stack.run(req, res, optional)
 > Returns a promise resolving the return value of the given function.
