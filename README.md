@@ -25,8 +25,8 @@ try {
 }
 
 ```
-To break the stack chain, simply throw a new error or reject a promise inside the
-middleware function.
+To break the stack chain, simply return any truthy value. `stack.run` will then
+return `false`.
 
 <br>
 
@@ -55,7 +55,7 @@ middleware function.
 <br>
 
 ### stack.run(req, res, optional)
-> Returns a promise resolving when all functions are done running
+> Returns a promise resolving with `true` when all functions are done running
 
 | Argument | Description | Default |
 |:------------- |:------------- |:------------- |

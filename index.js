@@ -20,9 +20,13 @@ class MiddlewareController {
   async run(req, res, optional) {
     for (let mw of this.stack) {
       if (this.matches(mw, req, res)) {
-        await mw.fn(req, res, optional)
+        let returned = await mw.fn(req, res, optional)
+        if (returned) {
+          return false
+        }
       }
     }
+    return true
   }
 
   /**
