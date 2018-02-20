@@ -1,6 +1,6 @@
 {
   "name": "async-middleware-stack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple middleware controller. Like express, but async.",
   "main": "./index.js",
   "repository": {
