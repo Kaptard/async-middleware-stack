@@ -44,7 +44,7 @@ middleware function.
 <br>
 
 ### stack.use(route, fn, method)
-> Returns a promise resolving the return value of the given function.
+> Adds a function to the middleware stack.
 
 | Argument | Description | Default |
 |:------------- |:------------- |:------------- |
@@ -55,7 +55,7 @@ middleware function.
 <br>
 
 ### stack.run(req, res, optional)
-> Returns a promise resolving the return value of the given function.
+> Returns a promise resolving when all functions are done running
 
 | Argument | Description | Default |
 |:------------- |:------------- |:------------- |
