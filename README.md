@@ -18,12 +18,11 @@ stack.use((req, res) => {
 // Run the stack
 const req = { /** usual node.js req object **/ }
 const res = { /**           ^^^^           **/ }
-try {
-  await stack.run(req, res)
-} catch (err) {
-  // middleware chain broken, so you prolly don't wanna proceed.
-}
+const passed = await stack.run(req, res)
 
+if (passed) {
+  // Continue if middleware stack passed
+}
 ```
 To break the stack chain, simply return any truthy value. `stack.run` will then
 return `false`.
