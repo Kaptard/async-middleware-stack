@@ -9,10 +9,9 @@ const Stack = require('async-middleware-stack')
 const stack = new Stack()
 
 // Add middleware function to the stack
-stack.use((req, res) => {
-  return new Promise(resolve => {
-    setTimeout(resolve, 5000)
-  })
+stack.use(async (req, res) => {
+  await new Promise(resolve => setTimeout(resolve, 5000)) // Wait for 5s
+  console.log('Praise kek')
 })
 
 // Run the stack
